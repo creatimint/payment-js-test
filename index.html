@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <style>
+      .default {
+        cursor: pointer;
+        background-color: rgb(233, 233, 233);
+        font-weight: 500;
+        border: none;
+      }
+      .active{
+        cursor: pointer;
+        background-color: rgb(154, 201, 255);
+        font-weight: 500;
+        border: none;
+      }
+    </style>
+  </head>
+  <body class="h-full">
+    <main
+      class="flex items-center justify-center h-screen flex-col bg-gray-100"
+    >
+      <div class="w-120 p-12 flex flex-col rounded-xl bg-white">
+        <div class="">
+          <h3 class="font-bold text-2xl">$ <span id="main-balance">4000</span></h3>
+          <p class="text-gray-500">Available Balance</p>
+        </div>
+        <hr class="my-6 border-gray-300" />
+
+        <div class="flex justify-between gap-2">
+          <button id="add-money-btn" class="px-4 py-2 rounded-lg default">
+            Add money
+          </button>
+          <button id="cash-out-btn" class="px-4 py-2 rounded-lg default">
+            cash out
+          </button>
+          <button id="transaction-btn" class="px-4 py-2 rounded-lg default">
+            transaction
+          </button>
+        </div>
+        <hr class="my-6 border-gray-300" />
+
+        <!-- cash out form-->
+        <div id="cash-out-section" class="flex flex-col hidden">
+          <label class="font-bold text-xl" for="">cash out</label>
+          <input
+            id="cash-out-input"
+            class="my-3 border border-gray-300 p-2 rounded-lg"
+            type="text"
+            autocomplete="off"
+            placeholder="Enter the amount"
+          />
+          <input
+            id="cash-out-pin"
+            class="mb-6 border border-gray-300 p-2 rounded-lg"
+            type="text"
+            placeholder="Enter the pin"
+            autocomplete="off"
+          />
+          <button id="cash-out" class="px-3 py-2 bg-blue-500 rounded-lg pointer-cursor text-white font-semibold">
+            cash Out
+          </button>
+        </div>
+
+        <!-- Add money form-->
+        <div id="add-money-section" class="flex flex-col">
+          <label class="font-bold text-xl" for="">Add Money</label>
+          <input
+            id="cash-out-input"
+            class="my-3 border border-gray-300 p-2 rounded-lg"
+            type="text"
+            autocomplete="off"
+            placeholder="Enter the amount"
+          />
+          <input
+            id="pin-input"
+            class="mb-6 border border-gray-300 p-2 rounded-lg"
+            type="text"
+            placeholder="Enter the pin"
+            autocomplete="off"
+          />
+          <button
+            id="add-money-btn"
+            class="px-3 py-2 bg-blue-500 rounded-lg pointer-cursor text-white font-semibold"
+          >
+            Add Money
+          </button>
+        </div>
+
+        <!-- transaction container -->
+
+        <div id="transaction-section" class="flex flex-col hidden">
+          <h3>THis is transaction section</h3>
+        </div>
+      </div>
+    </main>
+    <script src="./utlities.js"></script>
+    <script src="./event.js"></script>
+  </body>
+</html>
